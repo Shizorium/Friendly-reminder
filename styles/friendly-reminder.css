@@ -1,0 +1,111 @@
+/* Native Foundry window chrome and chat styles supply the theme. */
+.fr-launcher-row,
+.theatre-control-button-bar.fr-launcher-host {
+  display: flex;
+  align-items: center;
+  flex: 0 0 auto;
+  width: 100%;
+  min-width: 0;
+}
+
+.fr-launcher-row { justify-content: flex-end; }
+#chat-controls:has(> .fr-launcher-row) { flex-wrap: wrap; row-gap: 4px; }
+#chat-controls > .fr-launcher-row { flex: 0 0 100%; order: 100; }
+
+.fr-launcher-host .fr-launcher {
+  flex: 0 0 var(--control-item-size, 28px);
+  width: var(--control-item-size, 28px);
+  height: var(--control-item-size, 28px);
+  min-height: var(--control-item-size, 28px);
+  margin-inline-start: auto;
+  margin-inline-end: 0;
+  align-self: center;
+  order: 100;
+}
+
+.friendly-reminder {
+  min-width: 260px;
+  min-height: 200px;
+  --fr-zoom: 1;
+}
+
+.friendly-reminder.minimized { min-width: 0; min-height: 0; }
+.friendly-reminder .window-content { padding: 0; overflow: hidden; }
+.friendly-reminder .window-header .fr-icon { margin: 0; }
+.friendly-reminder .fr-panel { display: flex; flex-direction: column; height: 100%; min-height: 0; }
+.friendly-reminder .fr-toolbar {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  flex: 0 0 32px;
+  padding: 3px 7px;
+  border-bottom: 1px solid var(--color-border-light-primary, #7774);
+  color: var(--color-text-secondary, #999);
+  font-size: 11px;
+}
+.friendly-reminder .fr-count { flex: 1; }
+.friendly-reminder .fr-status { font-size: 10px; margin-inline-end: 5px; opacity: .65; }
+
+.fr-icon,
+.friendly-reminder .fr-entry-title,
+.friendly-reminder .fr-folder-title,
+.friendly-reminder .fr-zoom {
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+  color: inherit;
+  cursor: pointer;
+  font: inherit;
+  margin: 0;
+  padding: 0;
+  min-height: 0;
+}
+.fr-icon { display: inline-flex; flex: 0 0 24px; align-items: center; justify-content: center; width: 24px; height: 24px; line-height: 1; }
+.fr-icon > i { margin: 0; pointer-events: none; }
+.fr-icon:hover { color: var(--color-text-primary, #ddd); background: var(--color-cool-5-50, #8882); }
+.fr-icon:focus-visible { outline: 1px solid var(--color-border-highlight, #a78bfa); outline-offset: -1px; }
+.friendly-reminder .fr-zoom { flex: 0 0 36px; height: 24px; font-variant-numeric: tabular-nums; font-size: 11px; }
+.friendly-reminder .fr-scroll { flex: 1; min-height: 0; overflow: auto; scrollbar-width: thin; }
+.friendly-reminder .fr-list { display: block; height: auto; padding: 7px; margin: 0; overflow: visible; zoom: var(--fr-zoom); }
+.friendly-reminder .fr-entry { list-style: none; padding: 0; margin: 0 0 8px; border: 1px solid var(--color-border-light-primary, #7774); border-radius: 4px; overflow: hidden; }
+.friendly-reminder .fr-entry-controls { display: flex; align-items: center; gap: 1px; min-height: 28px; padding: 1px 3px; background: var(--color-cool-5-50, #8881); font-size: 11px; }
+.friendly-reminder .fr-entry-title { flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; text-align: start; padding-inline: 2px; }
+.friendly-reminder .fr-entry-body { display: block; height: auto; padding: 0; margin: 0; overflow: visible; }
+.friendly-reminder .fr-entry-body[hidden] { display: none; }
+.friendly-reminder .fr-entry-body > .message { margin: 0; border-radius: 0; border: 0; }
+.friendly-reminder .fr-snapshot { overflow-wrap: anywhere; }
+.friendly-reminder .fr-delete.fr-confirm { color: var(--color-level-success, #67ba75); background: #67ba7526; }
+.friendly-reminder .fr-management { display: flex; justify-content: space-between; gap: 5px; padding: 3px 7px; border-bottom: 1px solid var(--color-border-light-primary, #7774); font-size: 11px; }
+.friendly-reminder .fr-text-action { flex: 0 1 auto; width: auto; gap: 6px; padding: 0 5px; white-space: nowrap; }
+.friendly-reminder .fr-folder-create { display: flex; align-items: center; gap: 4px; padding: 5px 7px; border-bottom: 1px solid var(--color-border-light-primary, #7774); }
+.friendly-reminder .fr-folder-name { flex: 1; min-width: 0; height: 26px; font-size: 12px; }
+.friendly-reminder .fr-group { list-style: none; margin: 0; padding: 0; }
+.friendly-reminder .fr-folder { margin-top: 7px; border-top: 1px solid var(--color-border-light-primary, #7774); }
+.friendly-reminder .fr-folder-header { display: flex; align-items: center; gap: 4px; min-height: 30px; padding: 2px 3px; font-size: 12px; }
+.friendly-reminder .fr-folder-icon { flex: 0 0 14px; opacity: .65; font-size: 11px; }
+.friendly-reminder .fr-folder-title { flex: 1; min-width: 0; text-align: start; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.friendly-reminder .fr-folder-count { font-size: 10px; opacity: .65; margin-inline: 3px; }
+.friendly-reminder .fr-group-body { display: block; height: auto; padding: 0; margin: 0; overflow: visible; }
+.friendly-reminder .fr-folder > .fr-group-body { padding-inline-start: 5px; }
+.friendly-reminder .fr-group-empty { list-style: none; text-align: center; font-size: 10px; opacity: .6; padding: 9px 3px; border: 1px dashed var(--color-border-light-primary, #7774); border-radius: 3px; }
+.friendly-reminder .fr-move-row { display: flex; padding: 4px; border-top: 1px solid var(--color-border-light-primary, #7774); }
+.friendly-reminder .fr-move-select { flex: 1; min-width: 0; height: 26px; font-size: 11px; }
+.friendly-reminder .fr-folder-create[hidden],
+.friendly-reminder .fr-folder-header[hidden],
+.friendly-reminder .fr-group-body[hidden],
+.friendly-reminder .fr-move-row[hidden] { display: none; }
+.friendly-reminder .fr-entry-controls[draggable] { cursor: grab; }
+.friendly-reminder .fr-group.fr-drop-target { outline: 1px dashed var(--color-border-highlight, #a78bfa); outline-offset: 2px; }
+.friendly-reminder .fr-empty { display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; min-height: 260px; height: calc(100% - 14px); padding: 24px; gap: 10px; color: var(--color-text-secondary, #999); }
+.friendly-reminder .fr-empty > i { font-size: 30px; opacity: .4; margin-bottom: 4px; }
+.friendly-reminder .fr-empty strong { font-size: 13px; font-weight: 500; color: var(--color-text-primary, #ddd); }
+.friendly-reminder .fr-empty span { font-size: 12px; }
+.friendly-reminder .fr-empty small { font-size: 11px; line-height: 1.5; opacity: .7; }
+.friendly-reminder .fr-drop-hint { flex: 0 0 25px; display: grid; place-items: center; font-size: 10px; color: var(--color-text-secondary, #999); border-top: 1px solid var(--color-border-light-primary, #7774); }
+.friendly-reminder.fr-drag-over { outline: 2px solid var(--color-border-highlight, #a78bfa); outline-offset: -2px; }
+.friendly-reminder.fr-drag-over .fr-drop-hint { background: #a78bfa22; }
+.fr-launcher.fr-drag-over { outline: 2px solid var(--color-border-highlight, #a78bfa); }
+.chat-log .fr-save-button { font-size: 11px; opacity: 0; transition: opacity .15s; vertical-align: middle; }
+.chat-log .message:hover .fr-save-button,
+.chat-log .fr-save-button:focus-visible { opacity: .7; }
+@media (hover: none) { .chat-log .fr-save-button { opacity: .7; } }
